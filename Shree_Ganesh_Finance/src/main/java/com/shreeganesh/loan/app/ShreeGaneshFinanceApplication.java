@@ -32,15 +32,15 @@ public class ShreeGaneshFinanceApplication {
 
 		System.out.println("Jai GAnesh");
 
-		ObjectMapper mapper = new ObjectMapper();
+		// ObjectMapper mapper = new ObjectMapper();
 		
-		try {
-			System.out.println(mapper.writeValueAsString(new SanctionLetter()));
+		// try {
+		// 	System.out.println(mapper.writeValueAsString(new SanctionLetter()));
 
-		} catch (JsonProcessingException e) {
+		// } catch (JsonProcessingException e) {
 
 
-			e.printStackTrace();
-		}
+		// 	e.printStackTrace();
+		// }
 	}
 }
