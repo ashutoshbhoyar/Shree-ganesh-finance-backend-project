@@ -11,19 +11,13 @@ import com.shreeganesh.loan.app.customerEntities.Enquiry;
 import com.shreeganesh.loan.app.customerEnum.CustomerStatus;
 import com.shreeganesh.loan.app.customerRepository.EnquiryRepository;
 import com.shreeganesh.loan.app.customerServiceInterfaces.EnquiryService;
-import com.shreeganesh.loan.app.customerUtil.Cibil;
 
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
 
-import com.shreeganesh.loan.app.customerEntities.Enquiry;
-import com.shreeganesh.loan.app.customerEnum.CustomerStatus;
-import com.shreeganesh.loan.app.customerRepository.EnquiryRepository;
-import com.shreeganesh.loan.app.customerServiceInterfaces.EnquiryService;
-import com.shreeganesh.loan.app.customerUtil.Cibil;
+import static com.shreeganesh.loan.app.customerUtil.CibilGenerator.ciBillCheck;
 
 @Service
 public class EnquiryServiceImpl implements EnquiryService {
@@ -43,8 +37,8 @@ public class EnquiryServiceImpl implements EnquiryService {
 		SimpleMailMessage message = new SimpleMailMessage();
 		// For Sending an Email About Cibil Score
 
-		Cibil cibil = new Cibil();
-		Integer cibilChecked = cibil.cibilCheck(enq.getEnquiryPanCard());
+
+		Integer cibilChecked = ciBillCheck(enq.getEnquiryPanCard());
 		if (cibilChecked >= 750) {
 
 			message.setTo(enq.getEnquiryEmail());

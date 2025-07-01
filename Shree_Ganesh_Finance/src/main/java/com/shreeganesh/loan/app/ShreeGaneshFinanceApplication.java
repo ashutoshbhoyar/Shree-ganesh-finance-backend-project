@@ -21,26 +21,10 @@ import com.shreeganesh.loan.app.customerEntities.LocalAddress;
 import com.shreeganesh.loan.app.customerEntities.PermanentAddress;
 import com.shreeganesh.loan.app.customerEntities.SanctionLetter;
 
-
-
 @SpringBootApplication
 public class ShreeGaneshFinanceApplication {
-
-	
 	public static void main(String[] args) {
 		SpringApplication.run(ShreeGaneshFinanceApplication.class, args);
-
 		System.out.println("Jai GAnesh");
-
-		// ObjectMapper mapper = new ObjectMapper();
-		
-		// try {
-		// 	System.out.println(mapper.writeValueAsString(new SanctionLetter()));
-
-		// } catch (JsonProcessingException e) {
-
-
-		// 	e.printStackTrace();
-		// }
 	}
 }
